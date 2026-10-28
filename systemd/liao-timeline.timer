@@ -1,0 +1,11 @@
+[Unit]
+Description=Liao case collection + timeline every 6 hours (00/06/12/18 Eastern)
+
+[Timer]
+OnCalendar=*-*-* 00/6:00:00 America/New_York
+AccuracySec=1s
+Persistent=true
+Unit=liao-collect.service
+
+[Install]
+WantedBy=timers.target

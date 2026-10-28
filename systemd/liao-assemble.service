@@ -1,0 +1,23 @@
+[Unit]
+Description=Liao timeline assembly (svc-liao)
+Documentation=file:/opt/liao/assemble_case.sh
+ConditionPathIsDirectory=/var/lib/liao/cases
+
+[Service]
+Type=oneshot
+User=svc-liao
+Group=svc-liao
+EnvironmentFile=/etc/liao/secrets.env
+EnvironmentFile=-/etc/liao/liao.conf
+ExecStart=/opt/liao/assemble_case.sh
+SuccessExitStatus=1 3
+TimeoutStartSec=15min
+Nice=10
+UMask=0077
+ProtectSystem=strict
+ReadWritePaths=/var/lib/liao/cases
+ProtectHome=yes
+PrivateTmp=yes
+NoNewPrivileges=yes
+CapabilityBoundingSet=
+RestrictAddressFamilies=AF_INET AF_INET6 AF_UNIX

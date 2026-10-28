@@ -1,0 +1,28 @@
+# Liao trust-anchor allowlist v1 (one absolute path per line; # = comment)
+# Toolkit (13)
+/opt/liao/account_audit.py
+/opt/liao/conn_inventory.py
+/opt/liao/dns_parser.py
+/opt/liao/fim.py
+/opt/liao/ioc_timeline.py
+/opt/liao/log_integrity.py
+/opt/liao/log_parser.py
+/opt/liao/persistence_audit.py
+/opt/liao/proc_inventory.py
+/opt/liao/rep_lookup.py
+/opt/liao/collect_accounts.sh
+/opt/liao/collect_logintegrity.sh
+/opt/liao/collect_persistence.sh
+# Case pipeline (3)
+/opt/liao/collect_case.sh
+/opt/liao/assemble_case.sh
+/opt/liao/ANCHOR_FILES
+# Baselines (4)
+/var/lib/liao/baselines/account_baseline.json
+/var/lib/liao/baselines/fim_baseline.json
+/var/lib/liao/baselines/logintegrity_baseline.json
+/var/lib/liao/baselines/persistence_baseline.json
+# Units (3)
+/etc/systemd/system/liao-collect.service
+/etc/systemd/system/liao-assemble.service
+/etc/systemd/system/liao-timeline.timer

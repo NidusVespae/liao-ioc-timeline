@@ -1,0 +1,14 @@
+# Never commit host state, secrets or anchors
+*baseline*.json
+cases/
+anchor*/
+*.tar
+*.tar.gz
+secrets.env
+liao.conf
+*.env
+*.orig
+*.bak
+__pycache__/
+*.pyc
+.DS_Store

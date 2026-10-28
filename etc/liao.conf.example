@@ -1,0 +1,23 @@
+# /etc/liao/liao.conf  -  site settings for the Liao pipeline (copy, edit, then:
+#   sudo install -o root -g root -m 644 liao.conf /etc/liao/liao.conf )
+# Sourced by collect_case.sh as root (must be root-owned, not group/world-writable)
+# and read by liao-assemble.service via EnvironmentFile. KEY=value lines only.
+
+# Accounts allowed to hold sudo without being flagged (comma list)
+LIAO_ADMINS=root,youradmin
+
+# Service accounts (flagged if they get a login shell or a usable password)
+LIAO_SERVICE_NAMES=do-agent,cloudflared
+
+# Users too common to thread events on, in addition to root/service defaults
+LIAO_SELF_USERS=svc-liao
+
+# Owner of each case folder (the account liao-assemble.service runs as)
+LIAO_OWNER=svc-liao
+
+# Cases to keep (one every 6 h -> 30 = about 7.5 days)
+LIAO_KEEP_CASES=30
+
+# FIM path prefixes to ignore (space-separated), e.g. a git checkout that
+# commits daily. Keep this list short: every entry is a blind spot.
+LIAO_FIM_EXCLUDE=""
